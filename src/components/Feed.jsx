@@ -26,11 +26,13 @@ export const Feed = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    feed && (
-      <div className="flex justify-center my-5">
-        <UserCard user={feed[0]} />
-      </div>
-    )
+  return feed ? (
+    <div className="flex justify-center my-5">
+      <UserCard user={feed[0]} />
+    </div>
+  ) : (
+    <div className="flex justify-center my-5">
+      <h1 className="font-bold">No Connections</h1>
+    </div>
   );
 };

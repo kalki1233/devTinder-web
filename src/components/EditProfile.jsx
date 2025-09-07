@@ -32,8 +32,7 @@ export const EditProfile = ({ user }) => {
         },
         { withCredentials: true }
       );
-      console.log(res?.data);
-      dispatch(saveUser(res?.data?.data));
+      dispatch(saveUser(res.data));
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
