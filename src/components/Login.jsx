@@ -31,7 +31,7 @@ export const Login = () => {
       setEmail("");
       setPassword("");
       dispatch(saveUser(response.data));
-      navigate("/feed");
+      navigate("/");
     } catch (error) {
       console.error("ERROR :", error?.message || error);
     }
