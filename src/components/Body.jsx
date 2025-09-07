@@ -38,7 +38,9 @@ export const Body = () => {
   return (
     <div>
       <Navbar />
-      <Outlet />
+      <div className="h-max">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
