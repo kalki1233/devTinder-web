@@ -17,4 +17,4 @@ export const userSlice = createSlice({
   },
 });
 
-export const { saveUser } = userSlice.actions;
+export const { saveUser, removeUser } = userSlice.actions;
