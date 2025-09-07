@@ -10,11 +10,14 @@ export const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handlePassword = (value) => {
+    setError('')
     setPassword(value);
   };
   const handleEmail = (value) => {
+    setError('')
     setEmail(value);
   };
 
@@ -33,7 +36,8 @@ export const Login = () => {
       dispatch(saveUser(response.data));
       navigate("/");
     } catch (error) {
-      console.error("ERROR :", error?.message || error);
+      setError(error?.response?.data?.message);
+      console.error("ERROR :", error);
     }
   };
 
@@ -80,6 +84,7 @@ export const Login = () => {
               onChange={(e) => handlePassword(e.target.value)}
             />
           </label>
+          <p className="text-red-600">{error}</p>
           <div className="card-actions justify-end">
             <button
               className="btn btn-outline h-max"
